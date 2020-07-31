@@ -33,10 +33,10 @@ class PersonDataApp extends Component<any, any> {
     }
 
     return (
-      <div className="App">
-        <header className="App-header">
+      <div className="">
+        <header className="">
           <img src={logo} className="App-logo" alt="logo" />
-          <div className="App-intro">
+          <div className="">
             <h2>Name</h2>
             {<div key={personData.id}>{personData.name}</div>}
           </div>
