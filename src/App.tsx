@@ -1,6 +1,5 @@
 import * as React from 'react';
 import './App.css';
-import PersonDataApp from './PersonDataApp';
 
 import logo from './logo.svg';
 
