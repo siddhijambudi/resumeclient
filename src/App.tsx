@@ -4,7 +4,7 @@ import PersonDataApp from './PersonDataApp';
 
 import logo from './logo.svg';
 
-class App extends React.Component<{}, any> {
+class App extends React.Component<any, any> {
   render() {
     return (
       <div className="App">
