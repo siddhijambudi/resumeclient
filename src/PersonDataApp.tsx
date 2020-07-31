@@ -2,17 +2,27 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class PersonDataApp extends Component {
-  state = {
-    isLoading: true,
-    personData: Object
-  };
+interface PersonData {
+  id: string;
+  name: string;
+}
 
-  async componentDidMount() {
-    const response = await fetch('http://localhost:8080/api/v1/resume/name');
-    const body = await response.json();
+class PersonDataApp extends Component<any, any> {
 
-    this.setState({ personData: body, isLoading: false });
+  constructor(personData: PersonData) {
+    super(personData);
+    this.state = {
+      personData: [],
+      isLoading: false
+    };
+  }
+  
+  componentDidMount() {
+    this.setState({isLoading: true});
+    
+    fetch('https://siddhijambudiresume.herokuapp.com/api/v1/resume/name')
+      .then(response => response.json())
+      .then(data => this.setState({personData: data, isLoading: false}));
   }
 
   render() {
