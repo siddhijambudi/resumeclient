@@ -7,7 +7,7 @@ interface PersonData {
   name: string;
 }
 
-class PersonDataApp extends Component<any, any> {
+class PersonDataApp extends Component<{}, any> {
 
   constructor(personData: PersonData) {
     super(personData);
